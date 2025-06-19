@@ -6,7 +6,7 @@
         <a class="navbar-brand d-block mb-3" href="#">
           <img src="assets/images/logo.jpg" alt="Company Logo" >
         </a>
-        <p class="mb-3">Redistributing surplus medical supplies to underserved communities worldwide, creating sustainable health solutions.</p>
+        <p class="mb-3">Redistributing financial knowledge and resources to underserved communities, creating sustainable pathways to debt freedom and economic empowerment.</p>
         <div class="social-icons">
           <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
@@ -67,7 +67,7 @@
     <!-- Copyright -->
     <div class="row align-items-center">
       <div class="col-md-6 text-center text-md-start">
-        <p class="mb-0">&copy; <?php echo date('Y'); ?> Global Medical Impact. All rights reserved.</p>
+        <p class="mb-0">&copy; <?php echo date('Y'); ?> Global Financial Impact. All rights reserved.</p>
       </div>
       <div class="col-md-6 text-center text-md-end">
         <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>

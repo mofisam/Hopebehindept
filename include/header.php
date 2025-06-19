@@ -129,7 +129,7 @@
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="index.php">
       <img src="assets/images/logo.jpg" alt="Company Logo" class="img-fluid">
     </a>
 
@@ -145,7 +145,7 @@
         <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
         <li class="nav-item"><a class="nav-link" href="about.php">About Us</a></li>
         <li class="nav-item ms-2">
-          <a class="btn btn-outline-warning bg-warning text-white" href="sign.php">Sign In</a>
+          <a class="btn btn-outline-warning bg-warning text-white" href="login.php">Sign In</a>
         </li>
       </ul>
     </div>

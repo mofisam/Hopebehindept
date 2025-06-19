@@ -40,8 +40,8 @@ include 'include/header.php';
             <span class="text-muted me-3"><i class="far fa-calendar me-2"></i>June 15, 2023</span>
             <span class="text-muted"><i class="far fa-user me-2"></i>By Admin</span>
           </div>
-          <h2 class="card-title mb-3">How We're Transforming Medical Supply Chains in Africa</h2>
-          <p class="card-text">Discover how our innovative distribution network is helping hospitals in rural Africa get the supplies they need. This comprehensive look at our latest initiative shows the real-world impact of your donations.</p>
+          <h2 class="card-title mb-3">How We’re Transforming Financial Education and Debt Relief in Underserved Communities</h2>
+          <p class="card-text">Discover how our innovative education network is empowering underserved communities with the financial tools they need. This comprehensive look at our latest initiative shows the real-world impact of your support in helping people achieve debt freedom and long-term financial stability.</p>
           <a href="blog-single.php" class="btn btn-primary px-4">Read More</a>
         </div>
       </div>

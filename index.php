@@ -78,7 +78,7 @@ include 'include/header.php';
                   <h3 class="display-5 fw-bold mb-0 text-info counter" data-target="3">0</h3>
                 </div>
               </div>
-              <p class="text-center">Total Amount ($M)</p>
+              <p class="text-center">Total Amount (₦M)</p>
             </div>
           </div>
           
@@ -154,7 +154,7 @@ include 'include/header.php';
             }
             // Add 'M' for millions
             if (counter.classList.contains('text-info')) {
-              counter.innerText = '$' + target + 'M';
+              counter.innerText = '₦' + target + 'M';
             }
           }
         };
@@ -177,7 +177,7 @@ include 'include/header.php';
 <section class="container text-center py-5 my-4">
   <h2 class="display-6 fw-bold">Join Us in Making a Difference</h2>
   <p class="lead text-muted mb-4">Become part of a movement that transforms lives through health and hope.</p>
-  <a href="#projects" class="btn btn-outline-primary btn-lg px-4 py-2">Explore Projects</a>
+  <a href="#projects" class="btn btn-outline-warning btn-lg px-4 py-2">Explore Projects</a>
 </section>
 
 <!-- Who We Are -->
@@ -223,12 +223,12 @@ include 'include/header.php';
             <div class="progress-bar bg-warning" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
           <div class="d-flex justify-content-between small text-muted">
-            <span>$35,000 raised</span>
+            <span>₦35,000 raised</span>
             <span>70%</span>
           </div>
         </div>
         <div class="card-footer bg-transparent border-0">
-          <a href="#" class="btn btn-success w-100">Donate Now</a>
+          <a href="#" class="btn btn-warning w-100">Donate Now</a>
         </div>
       </div>
     </div>
@@ -244,12 +244,12 @@ include 'include/header.php';
             <div class="progress-bar bg-warning" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
           <div class="d-flex justify-content-between small text-muted">
-            <span>$22,500 raised</span>
+            <span>₦22,500 raised</span>
             <span>75%</span>
           </div>
         </div>
         <div class="card-footer bg-transparent border-0">
-          <a href="#" class="btn btn-success w-100">Donate Now</a>
+          <a href="#" class="btn btn-warning w-100">Donate Now</a>
         </div>
       </div>
     </div>
@@ -265,19 +265,19 @@ include 'include/header.php';
             <div class="progress-bar bg-warning" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
           <div class="d-flex justify-content-between small text-muted">
-            <span>$28,000 raised</span>
+            <span>₦28,000 raised</span>
             <span>70%</span>
           </div>
         </div>
         <div class="card-footer bg-transparent border-0">
-          <a href="#" class="btn btn-success w-100">Donate Now</a>
+          <a href="#" class="btn btn-warning w-100">Donate Now</a>
         </div>
       </div>
     </div>
 
   </div>
   <div class="text-center mt-5">
-    <a href="#" class="btn btn-outline-primary btn-lg px-4 py-2">View All Projects</a>
+    <a href="#" class="btn btn-outline-warning btn-lg px-4 py-2">View All Projects</a>
   </div>
 </section>
 
