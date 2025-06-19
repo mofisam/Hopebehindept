@@ -31,7 +31,7 @@ include 'include/header.php';
       <div class="card mb-5 border-0 shadow-lg">
         <div class="position-relative">
           <img src="images/blog-featured.jpg" class="card-img-top" alt="Featured Blog Post" style="height: 400px; object-fit: cover;">
-          <div class="position-absolute top-0 start-0 bg-primary text-white px-3 py-2">
+          <div class="position-absolute top-0 start-0 bg-success text-white px-3 py-2">
             Featured
           </div>
         </div>
@@ -42,7 +42,7 @@ include 'include/header.php';
           </div>
           <h2 class="card-title mb-3">How We’re Transforming Financial Education and Debt Relief in Underserved Communities</h2>
           <p class="card-text">Discover how our innovative education network is empowering underserved communities with the financial tools they need. This comprehensive look at our latest initiative shows the real-world impact of your support in helping people achieve debt freedom and long-term financial stability.</p>
-          <a href="blog-single.php" class="btn btn-primary px-4">Read More</a>
+          <a href="blog-single.php" class="btn btn-success px-4">Read More</a>
         </div>
       </div>
 
@@ -51,7 +51,7 @@ include 'include/header.php';
         <!-- Blog Post 1 -->
         <div class="col-md-6">
           <div class="card h-100 border-0 shadow-sm">
-            <img src="images/blog1.jpg" class="card-img-top" alt="Blog Post 1" style="height: 200px; object-fit: cover;">
+            <img src="assets/images/img.jpg" class="card-img-top" alt="Blog Post 1" style="height: 200px; object-fit: cover;">
             <div class="card-body">
               <div class="d-flex mb-2">
                 <span class="text-muted small me-3"><i class="far fa-calendar me-1"></i>June 10, 2023</span>
@@ -61,7 +61,7 @@ include 'include/header.php';
               <p class="card-text">Read how our partnership with local health workers is making a difference in one Kenyan community.</p>
             </div>
             <div class="card-footer bg-transparent border-0">
-              <a href="blog-single.php" class="btn btn-sm btn-outline-primary">Read More</a>
+              <a href="blog-single.php" class="btn btn-sm btn-outline-success">Read More</a>
             </div>
           </div>
         </div>
@@ -69,7 +69,7 @@ include 'include/header.php';
         <!-- Blog Post 2 -->
         <div class="col-md-6">
           <div class="card h-100 border-0 shadow-sm">
-            <img src="images/blog2.jpg" class="card-img-top" alt="Blog Post 2" style="height: 200px; object-fit: cover;">
+            <img src="assets/images/img.jpg" class="card-img-top" alt="Blog Post 2" style="height: 200px; object-fit: cover;">
             <div class="card-body">
               <div class="d-flex mb-2">
                 <span class="text-muted small me-3"><i class="far fa-calendar me-1"></i>May 28, 2023</span>
@@ -79,7 +79,7 @@ include 'include/header.php';
               <p class="card-text">How redistributing surplus supplies helps both people and the planet through sustainable practices.</p>
             </div>
             <div class="card-footer bg-transparent border-0">
-              <a href="blog-single.php" class="btn btn-sm btn-outline-primary">Read More</a>
+              <a href="blog-single.php" class="btn btn-sm btn-outline-success">Read More</a>
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@ include 'include/header.php';
         <!-- Blog Post 3 -->
         <div class="col-md-6">
           <div class="card h-100 border-0 shadow-sm">
-            <img src="images/blog3.jpg" class="card-img-top" alt="Blog Post 3" style="height: 200px; object-fit: cover;">
+            <img src="assets/images/img.jpg" class="card-img-top" alt="Blog Post 3" style="height: 200px; object-fit: cover;">
             <div class="card-body">
               <div class="d-flex mb-2">
                 <span class="text-muted small me-3"><i class="far fa-calendar me-1"></i>May 15, 2023</span>
@@ -97,7 +97,7 @@ include 'include/header.php';
               <p class="card-text">The incredible people who make our work possible share their experiences and motivations.</p>
             </div>
             <div class="card-footer bg-transparent border-0">
-              <a href="blog-single.php" class="btn btn-sm btn-outline-primary">Read More</a>
+              <a href="blog-single.php" class="btn btn-sm btn-outline-success">Read More</a>
             </div>
           </div>
         </div>
@@ -105,7 +105,7 @@ include 'include/header.php';
         <!-- Blog Post 4 -->
         <div class="col-md-6">
           <div class="card h-100 border-0 shadow-sm">
-            <img src="images/blog4.jpg" class="card-img-top" alt="Blog Post 4" style="height: 200px; object-fit: cover;">
+            <img src="assets/images/img.jpg" class="card-img-top" alt="Blog Post 4" style="height: 200px; object-fit: cover;">
             <div class="card-body">
               <div class="d-flex mb-2">
                 <span class="text-muted small me-3"><i class="far fa-calendar me-1"></i>April 30, 2023</span>
@@ -115,7 +115,7 @@ include 'include/header.php';
               <p class="card-text">Learn how businesses are joining our mission and how your company can get involved.</p>
             </div>
             <div class="card-footer bg-transparent border-0">
-              <a href="blog-single.php" class="btn btn-sm btn-outline-primary">Read More</a>
+              <a href="blog-single.php" class="btn btn-sm btn-outline-success">Read More</a>
             </div>
           </div>
         </div>
@@ -146,8 +146,8 @@ include 'include/header.php';
             <h4 class="card-title mb-3" style="color: #ffb420;">About Our Blog</h4>
             <p class="card-text">Stay updated with our latest initiatives, success stories, and insights into global healthcare challenges and solutions.</p>
             <div class="d-flex">
-              <a href="#" class="btn btn-sm btn-outline-primary me-2">Learn More</a>
-              <a href="#" class="btn btn-sm btn-primary" style="background-color: #ffb420; border-color: #ffb420;">Subscribe</a>
+              <a href="#" class="btn btn-sm btn-outline-success me-2">Learn More</a>
+              <a href="#" class="btn btn-sm btn-success" style="background-color: #ffb420; border-color: #ffb420;">Subscribe</a>
             </div>
           </div>
         </div>
@@ -186,21 +186,21 @@ include 'include/header.php';
           <div class="card-body">
             <h4 class="card-title mb-3" style="color: #ffb420;">Recent Posts</h4>
             <div class="mb-3 d-flex">
-              <img src="images/blog-thumb1.jpg" alt="Post thumb" class="rounded me-3" width="80" height="60" style="object-fit: cover;">
+              <img src="assets/images/img.jpg" alt="Post thumb" class="rounded me-3" width="80" height="60" style="object-fit: cover;">
               <div>
                 <h6 class="mb-1"><a href="#" class="text-decoration-none">New Distribution Center Opens in Ghana</a></h6>
                 <small class="text-muted">June 5, 2023</small>
               </div>
             </div>
             <div class="mb-3 d-flex">
-              <img src="images/blog-thumb2.jpg" alt="Post thumb" class="rounded me-3" width="80" height="60" style="object-fit: cover;">
+              <img src="assets/images/img.jpg" alt="Post thumb" class="rounded me-3" width="80" height="60" style="object-fit: cover;">
               <div>
                 <h6 class="mb-1"><a href="#" class="text-decoration-none">Annual Impact Report 2023</a></h6>
                 <small class="text-muted">May 20, 2023</small>
               </div>
             </div>
             <div class="d-flex">
-              <img src="images/blog-thumb3.jpg" alt="Post thumb" class="rounded me-3" width="80" height="60" style="object-fit: cover;">
+              <img src="assets/images/img.jpg" alt="Post thumb" class="rounded me-3" width="80" height="60" style="object-fit: cover;">
               <div>
                 <h6 class="mb-1"><a href="#" class="text-decoration-none">How to Organize a Supply Drive</a></h6>
                 <small class="text-muted">April 15, 2023</small>

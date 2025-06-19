@@ -9,7 +9,7 @@ include 'include/header.php';
       <div class="col-md-6 ">
         <h1 class="display-4 fw-bold mb-4">Making a Global Impact Together</h1>
         <p class="lead mb-4" style="text-shadow: 0 1px 2px rgba(0,0,0,0.2);">Join us in redistributing surplus medical supplies to underserved communities worldwide.</p>
-        <a href="#projects" class="btn btn-light btn-lg px-4 bg-success py-2 text-white fw-bold shadow">Explore Projects</a>
+        <a href="#programs" class="btn btn-success btn-lg px-4 bg-success py-2 text-white fw-bold shadow">Explore programs</a>
       </div>
       <div class="col-md-6 d-none d-md-block">
         <div class="row g-2">
@@ -66,7 +66,7 @@ include 'include/header.php';
                   <h3 class="display-5 fw-bold mb-0 text-success counter" data-target="85">0</h3>
                 </div>
               </div>
-              <p class="text-center">Projects Created</p>
+              <p class="text-center">programs Created</p>
             </div>
           </div>
         
@@ -87,7 +87,7 @@ include 'include/header.php';
             <div class="d-flex flex-column align-items-center">
               <div class="position-relative mb-3">
                 <div class="stat-circle bg-warning bg-opacity-10 d-flex align-items-center justify-content-center">
-                  <h3 class="display-5 fw-bold mb-0 text-warning counter" data-target="90">0</h3>
+                  <h3 class="display-5 fw-bold mb-0 text-warning counter" data-target="0">0</h3>
                 </div>
               </div>
               <p class="text-center">Funding Success Rate</p>
@@ -177,7 +177,7 @@ include 'include/header.php';
 <section class="container text-center py-5 my-4">
   <h2 class="display-6 fw-bold">Join Us in Making a Difference</h2>
   <p class="lead text-muted mb-4">Become part of a movement that transforms lives through health and hope.</p>
-  <a href="#projects" class="btn btn-outline-warning btn-lg px-4 py-2">Explore Projects</a>
+  <a href="#programs" class="btn btn-outline-success btn-lg px-4 py-2">Explore programs</a>
 </section>
 
 <!-- Who We Are -->
@@ -208,7 +208,7 @@ include 'include/header.php';
 </section>
 
 <!-- Support a Project -->
-<section id="projects" class="container py-5">
+<section id="programs" class="container py-5">
   <h2 class="mb-5 text-center display-5 fw-bold">Support a Project</h2>
   <div class="row g-4">
 
@@ -228,7 +228,7 @@ include 'include/header.php';
           </div>
         </div>
         <div class="card-footer bg-transparent border-0">
-          <a href="#" class="btn btn-warning w-100">Donate Now</a>
+          <a href="#" class="btn btn-success w-100">Donate Now</a>
         </div>
       </div>
     </div>
@@ -249,7 +249,7 @@ include 'include/header.php';
           </div>
         </div>
         <div class="card-footer bg-transparent border-0">
-          <a href="#" class="btn btn-warning w-100">Donate Now</a>
+          <a href="#" class="btn btn-success w-100">Donate Now</a>
         </div>
       </div>
     </div>
@@ -270,14 +270,14 @@ include 'include/header.php';
           </div>
         </div>
         <div class="card-footer bg-transparent border-0">
-          <a href="#" class="btn btn-warning w-100">Donate Now</a>
+          <a href="#" class="btn btn-success w-100">Donate Now</a>
         </div>
       </div>
     </div>
 
   </div>
   <div class="text-center mt-5">
-    <a href="#" class="btn btn-outline-warning btn-lg px-4 py-2">View All Projects</a>
+    <a href="#" class="btn btn-outline-success btn-lg px-4 py-2">View All programs</a>
   </div>
 </section>
 

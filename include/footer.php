@@ -20,7 +20,7 @@
         <h5 class="text-uppercase mb-4" style="color: #ffb420;">Quick Links</h5>
         <ul class="list-unstyled">
           <li class="mb-2"><a href="#" class="text-white text-decoration-none">Home</a></li>
-          <li class="mb-2"><a href="#projects" class="text-white text-decoration-none">Projects</a></li>
+          <li class="mb-2"><a href="#programs" class="text-white text-decoration-none">programs</a></li>
           <li class="mb-2"><a href="#" class="text-white text-decoration-none">Blog</a></li>
           <li class="mb-2"><a href="#" class="text-white text-decoration-none">About Us</a></li>
           <li class="mb-2"><a href="#" class="text-white text-decoration-none">Get Involved</a></li>
@@ -49,7 +49,7 @@
       <!-- Newsletter -->
       <div class="col-lg-3 col-md-4 mb-4">
         <h5 class="text-uppercase mb-4" style="color: #ffb420;">Newsletter</h5>
-        <p>Subscribe to our newsletter for updates on our projects and initiatives.</p>
+        <p>Subscribe to our newsletter for updates on our programs and initiatives.</p>
         <form class="mb-3">
           <div class="input-group">
             <input type="email" class="form-control" placeholder="Your email" aria-label="Your email">

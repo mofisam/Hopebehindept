@@ -81,7 +81,7 @@
     .hero-section {
       position: relative;
       overflow: hidden;
-      background: linear-gradient(90deg,#ffffff 0%,rgba(253, 172, 72, 1) 70%, #ffb420 100%);
+      background: linear-gradient(90deg,#ffffff 0%, #27a263 70%, #27a263 100%);
     }
     
     /* Optional: Add a subtle pattern overlay */
@@ -130,7 +130,8 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
     <a class="navbar-brand" href="index.php">
-      <img src="assets/images/logo.jpg" alt="Company Logo" class="img-fluid">
+      <img src="assets/images/logo.png" alt="Company Logo" class="img-fluid" width="70px">
+      <span>Home</span>
     </a>
 
     <!-- Mobile hamburger toggle -->
@@ -141,11 +142,11 @@
     <!-- Desktop menu -->
     <div class="collapse navbar-collapse justify-content-end desktop-menu">
       <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="project.php">Project</a></li>
+        <li class="nav-item"><a class="nav-link" href="programs.php">Programs</a></li>
         <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
         <li class="nav-item"><a class="nav-link" href="about.php">About Us</a></li>
         <li class="nav-item ms-2">
-          <a class="btn btn-outline-warning bg-warning text-white" href="login.php">Sign In</a>
+          <a class="btn btn-outline-success bg-success text-white" href="login.php">Sign In</a>
         </li>
       </ul>
     </div>
@@ -157,7 +158,7 @@
   <!-- Sidebar (Mobile Menu) -->
   <div class="sidebar" id="sidebar">
     <button class="btn-close" id="closeSidebar" aria-label="Close menu"></button>
-    <a href="project.php">Project</a>
+    <a href="programs.php">Programs</a>
     <a href="blog.php">Blog</a>
     <a href="aboutus.php">About Us</a>
     <a href="#" class="btn btn-outline-primary mt-3">Sign In</a>

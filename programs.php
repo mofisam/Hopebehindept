@@ -2,8 +2,8 @@
 include 'include/header.php';
 ?>
 
-<!-- Projects Hero Section -->
-<section class="projects-hero py-5" style="background: linear-gradient(135deg, #ffb420 0%, #ff8c00 50%, #ff6b00 100%);">
+<!-- programs Hero Section -->
+<section class="programs-hero py-5" style="background: linear-gradient(135deg, #ffb420 0%, #ff8c00 50%, #ff6b00 100%);">
   <div class="container py-5">
     <div class="row justify-content-center text-center">
       <div class="col-lg-8">
@@ -20,25 +20,25 @@ include 'include/header.php';
     <div class="row text-center">
       <div class="col-md-3 mb-4">
         <div class="stat-circle bg-primary bg-opacity-10 mx-auto d-flex align-items-center justify-content-center mb-3">
-          <h3 class="display-5 fw-bold mb-0 text-primary counter" data-target="12500">0</h3>
+          <h3 class="display-5 fw-bold mb-0 text-primary counter" data-target="0">0</h3>
         </div>
         <p>People Debt-Free</p>
       </div>
       <div class="col-md-3 mb-4">
         <div class="stat-circle bg-success bg-opacity-10 mx-auto d-flex align-items-center justify-content-center mb-3">
-          <h3 class="display-5 fw-bold mb-0 text-success counter" data-target="320">0</h3>
+          <h3 class="display-5 fw-bold mb-0 text-success counter" data-target="0">0</h3>
         </div>
         <p>Workshops Conducted</p>
       </div>
       <div class="col-md-3 mb-4">
         <div class="stat-circle bg-info bg-opacity-10 mx-auto d-flex align-items-center justify-content-center mb-3">
-          <h3 class="display-5 fw-bold mb-0 text-info counter" data-target="4.7">0</h3>
+          <h3 class="display-5 fw-bold mb-0 text-info counter" data-target="0">0</h3>
         </div>
         <p>Million Naira Relieved</p>
       </div>
       <div class="col-md-3 mb-4">
         <div class="stat-circle bg-warning bg-opacity-10 mx-auto d-flex align-items-center justify-content-center mb-3">
-          <h3 class="display-5 fw-bold mb-0 text-warning counter" data-target="92">0</h3>
+          <h3 class="display-5 fw-bold mb-0 text-warning counter" data-target="12,500">0</h3>
         </div>
         <p>Success Rate</p>
       </div>
@@ -46,14 +46,14 @@ include 'include/header.php';
   </div>
 </section>
 
-<!-- Projects Grid -->
-<section id="projects" class="container py-5">
+<!-- programs Grid -->
+<section id="programs" class="container py-5">
   <div class="row mb-5">
     <div class="col-lg-6">
       <h2 class="display-5 fw-bold">Our Financial Freedom Programs</h2>
     </div>
     <div class="col-lg-6 text-lg-end">
-      <a href="#" class="btn btn-outline-primary">View All Initiatives</a>
+      <a href="#" class="btn btn-outline-success">View All Initiatives</a>
     </div>
   </div>
 
@@ -64,13 +64,13 @@ include 'include/header.php';
         <img src="/images/project-debt-relief.jpg" class="card-img-top" alt="Debt relief program" loading="lazy">
         <div class="card-body">
           <div class="d-flex mb-3">
-            <span class="badge bg-primary me-2">Active</span>
+            <span class="badge bg-success me-2">Active</span>
             <span class="text-muted"><i class="far fa-calendar me-1"></i>Ongoing</span>
           </div>
           <h3 class="h4 card-title">Debt Relief Initiative</h3>
           <p class="card-text">Our flagship program that negotiates debt reductions and provides structured repayment plans to help individuals break free from financial burdens.</p>
           <div class="progress mt-3 mb-2" style="height: 8px;">
-            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-warning" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
           <div class="d-flex justify-content-between small text-muted">
             <span>₦3.2M raised</span>
@@ -78,7 +78,7 @@ include 'include/header.php';
           </div>
         </div>
         <div class="card-footer bg-transparent border-0">
-          <a href="#" class="btn btn-primary w-100">Support This Program</a>
+          <a href="#" class="btn btn-success w-100">Support This Program</a>
         </div>
       </div>
     </div>
@@ -89,13 +89,13 @@ include 'include/header.php';
         <img src="/images/project-financial-literacy.jpg" class="card-img-top" alt="Financial literacy workshop" loading="lazy">
         <div class="card-body">
           <div class="d-flex mb-3">
-            <span class="badge bg-primary me-2">Active</span>
+            <span class="badge bg-success me-2">Active</span>
             <span class="text-muted"><i class="far fa-calendar me-1"></i>Ongoing</span>
           </div>
           <h3 class="h4 card-title">Financial Literacy Program</h3>
           <p class="card-text">Free community workshops teaching budgeting, saving, investing, and debt management skills to empower lasting financial independence.</p>
           <div class="progress mt-3 mb-2" style="height: 8px;">
-            <div class="progress-bar bg-primary" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-warning" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
           <div class="d-flex justify-content-between small text-muted">
             <span>₦150K raised</span>
@@ -103,7 +103,7 @@ include 'include/header.php';
           </div>
         </div>
         <div class="card-footer bg-transparent border-0">
-          <a href="#" class="btn btn-primary w-100">Support This Program</a>
+          <a href="#" class="btn btn-success w-100">Support This Program</a>
         </div>
       </div>
     </div>
@@ -114,13 +114,13 @@ include 'include/header.php';
         <img src="/images/project-student-loan.jpg" class="card-img-top" alt="Student loan assistance" loading="lazy">
         <div class="card-body">
           <div class="d-flex mb-3">
-            <span class="badge bg-success me-2">New</span>
+            <span class="badge bg-warning me-2">New</span>
             <span class="text-muted"><i class="far fa-calendar me-1"></i>Starting Soon</span>
           </div>
           <h3 class="h4 card-title">Student Loan Assistance</h3>
           <p class="card-text">Specialized program helping graduates navigate loan repayment options, forgiveness programs, and refinancing opportunities.</p>
           <div class="progress mt-3 mb-2" style="height: 8px;">
-            <div class="progress-bar bg-primary" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="progress-bar bg-warning" role="progressbar" style="width: 30%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
           <div class="d-flex justify-content-between small text-muted">
             <span>₦75K raised</span>
@@ -128,7 +128,7 @@ include 'include/header.php';
           </div>
         </div>
         <div class="card-footer bg-transparent border-0">
-          <a href="#" class="btn btn-primary w-100">Support This Program</a>
+          <a href="#" class="btn btn-success w-100">Support This Program</a>
         </div>
       </div>
     </div>
@@ -201,8 +201,8 @@ include 'include/header.php';
     <div class="col-lg-8 text-center">
       <h2 class="display-6 fw-bold mb-4">Ready to Start Your Financial Freedom Journey?</h2>
       <div class="d-flex flex-wrap justify-content-center gap-3">
-        <a href="#" class="btn btn-primary btn-lg px-4">Apply for Assistance</a>
-        <a href="#" class="btn btn-outline-primary btn-lg px-4">Attend a Workshop</a>
+        <a href="#" class="btn btn-success btn-lg px-4">Apply for Assistance</a>
+        <a href="#" class="btn btn-outline-success btn-lg px-4">Attend a Workshop</a>
       </div>
     </div>
   </div>
@@ -214,12 +214,12 @@ include 'include/footer.php';
 
 <!-- Styles -->
 <style>
-  .projects-hero {
+  .programs-hero {
     position: relative;
     overflow: hidden;
   }
   
-  .projects-hero::after {
+  .programs-hero::after {
     content: '';
     position: absolute;
     top: 0;
