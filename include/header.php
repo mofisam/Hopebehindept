@@ -81,7 +81,7 @@
     .hero-section {
       position: relative;
       overflow: hidden;
-      background: linear-gradient(90deg,#ffffff 0%, #27a263 70%, #27a263 100%);
+      background: linear-gradient(90deg,rgb(239, 222, 189) 0%, #27a263 70%, #27a263 100%);
     }
     
     /* Optional: Add a subtle pattern overlay */

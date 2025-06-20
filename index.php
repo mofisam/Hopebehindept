@@ -7,8 +7,8 @@ include 'include/header.php';
   <div class="container">
     <div class="row align-items-center">
       <div class="col-md-6 ">
-        <h1 class="display-4 fw-bold mb-4">Making a Global Impact Together</h1>
-        <p class="lead mb-4" style="text-shadow: 0 1px 2px rgba(0,0,0,0.2);">Join us in redistributing surplus medical supplies to underserved communities worldwide.</p>
+        <h1 class="display-4 fw-bold text-success mb-4">Making a Financial Impact Together</h1>
+        <p class="lead mb-4 text-success" style="text-shadow: 0 1px 2px rgba(0,0,0,0.2);">Join us in redistributing financial knowledge and support to underserved communities across Africa.</p>
         <a href="#programs" class="btn btn-success btn-lg px-4 bg-success py-2 text-white fw-bold shadow">Explore programs</a>
       </div>
       <div class="col-md-6 d-none d-md-block">
