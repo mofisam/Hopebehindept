@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // Load configuration and PHPMailer
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/config/.env';
@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $mail->addAddress($email, $user['first_name']);
                         
                         // Content
-                        $resetLink = "https://yourdomain.com/reset-password.php?token=$token";
+                        $resetLink = "<? BASE_URL ?>/reset-password.php?token=$token";
                         $mail->isHTML(true);
                         $mail->Subject = 'Password Reset Request';
                         $mail->Body = "

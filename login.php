@@ -3,16 +3,16 @@
 session_start();
 
 // Database connection
-$db = new mysqli('localhost', 'root', '1234', 'Hopebehindebt');
+$mysqli = new mysqli('localhost', 'root', '1234', 'Hopebehindebt');
 
 // Check connection
-if ($db->connect_error) {
-    die("Connection failed: " . $db->connect_error);
+if ($mysqli->connect_error) {
+    die("Connection failed: " . $mysqli->connect_error);
 }
 
 // Process login form
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = $db->real_escape_string($_POST['email'] ?? '');
+    $email = $mysqli->real_escape_string($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
     $remember = isset($_POST['remember']);
 
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (empty($errors)) {
         // Check user credentials
-        $stmt = $db->prepare("SELECT user_id, email, password_hash, first_name, role_id FROM users WHERE email = ?");
+        $stmt = $mysqli->prepare("SELECT user_id, email, password_hash, first_name, role_id FROM users WHERE email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -46,14 +46,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     setcookie('remember_token', $token, time() + 86400 * 30, "/"); // 30 days
                     
                     // Store token in database
-                    $updateStmt = $db->prepare("UPDATE users SET remember_token = ? WHERE user_id = ?");
+                    $updateStmt = $mysqli->prepare("UPDATE users SET remember_token = ? WHERE user_id = ?");
                     $updateStmt->bind_param("si", $token, $user['user_id']);
                     $updateStmt->execute();
                     $updateStmt->close();
                 }
                 
                 // Update last login
-                $updateLogin = $db->prepare("UPDATE users SET last_login = NOW() WHERE user_id = ?");
+                $updateLogin = $mysqli->prepare("UPDATE users SET last_login = NOW() WHERE user_id = ?");
                 $updateLogin->bind_param("i", $user['user_id']);
                 $updateLogin->execute();
                 $updateLogin->close();
@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Redirect to dashboard
                 header("Location: dashboard.php");
                 $stmt->close();
-                $db->close();
+                $mysqli->close();
                 ob_end_flush();
                 exit();
             } else {
