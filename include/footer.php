@@ -8,16 +8,24 @@
         </a>
         <p class="mb-3">Redistributing financial knowledge and resources to underserved communities, creating sustainable pathways to debt freedom and economic empowerment.</p>
         <div class="social-icons">
-          <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+          <?php if ($fb = get_setting('facebook_url')): ?>
+              <a href="<?= htmlspecialchars($fb) ?>" class="text-white me-3" target="_blank"><i class="fab fa-facebook"></i></a>
+          <?php endif; ?>
+          <?php if ($tw = get_setting('twitter_url')): ?>
+              <a href="<?= htmlspecialchars($tw) ?>" class="text-white me-3" target="_blank"><i class="fab fa-twitter"></i></a>
+          <?php endif; ?>
+          <?php if ($tw = get_setting('twitter_url')): ?>
+              <a href="<?= htmlspecialchars($tw) ?>" class="text-white me-3" target="_blank"><i class="fab fa-instagram"></i></a>
+          <?php endif; ?>
+          <?php if ($tw = get_setting('twitter_url')): ?>
+              <a href="<?= htmlspecialchars($tw) ?>" class="text-white me-3" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <?php endif; ?>
         </div>
       </div>
 
       <!-- Quick Links -->
       <div class="col-lg-2 col-md-4 mb-4">
-        <h5 class="text-uppercase mb-4" style="color: #ffb420;">Quick Links</h5>
+        <h5 class="text-uppercase mb-4 text-success">Quick Links</h5>
         <ul class="list-unstyled">
           <li class="mb-2"><a href="#" class="text-white text-decoration-none">Home</a></li>
           <li class="mb-2"><a href="#programs" class="text-white text-decoration-none">programs</a></li>
@@ -29,18 +37,18 @@
 
       <!-- Contact Info -->
       <div class="col-lg-3 col-md-4 mb-4">
-        <h5 class="text-uppercase mb-4" style="color: #ffb420;">Contact Us</h5>
+        <h5 class="text-uppercase mb-4 text-success">Contact Us</h5>
         <ul class="list-unstyled">
           <li class="mb-3 d-flex">
-            <i class="fas fa-map-marker-alt me-3 mt-1" style="color: #ffb420;"></i>
+            <i class="fas fa-map-marker-alt me-3 mt-1 text-success"></i>
             <span>Nigeria</span>
           </li>
           <li class="mb-3 d-flex">
-            <i class="fas fa-phone me-3 mt-1" style="color: #ffb420;"></i>
+            <i class="fas fa-phone me-3 mt-1 text-success"></i>
             <span>(234) 800-000-0000</span>
           </li>
           <li class="mb-3 d-flex">
-            <i class="fas fa-envelope me-3 mt-1" style="color: #ffb420;"></i>
+            <i class="fas fa-envelope me-3 mt-1 text-success"></i>
             <span>info@hopebehindept.org</span>
           </li>
         </ul>
@@ -48,7 +56,7 @@
 
       <!-- Newsletter -->
       <div class="col-lg-3 col-md-4 mb-4">
-        <h5 class="text-uppercase mb-4" style="color: #ffb420;">Newsletter</h5>
+        <h5 class="text-uppercase mb-4 text-success">Newsletter</h5>
         <p>Subscribe to our newsletter for updates on our programs and initiatives.</p>
         <form class="mb-3">
           <div class="input-group">

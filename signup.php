@@ -4,19 +4,19 @@ session_start();
 
 
 // Database connection
-$mysqli = new mysqli('localhost', 'root', '1234', 'Hopebehindebt');
+$conn = new mysqli('localhost', 'root', '1234', 'Hopebehindebt');
 
 // Check connection
-if ($mysqli->connect_error) {
-    die("Connection failed: " . $mysqli->connect_error);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
 // Process form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Get form data
-    $firstName = $mysqli->real_escape_string($_POST['firstName']);
-    $lastName = $mysqli->real_escape_string($_POST['lastName']);
-    $email = $mysqli->real_escape_string($_POST['email']);
+    $firstName = $conn->real_escape_string($_POST['firstName']);
+    $lastName = $conn->real_escape_string($_POST['lastName']);
+    $email = $conn->real_escape_string($_POST['email']);
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirmPassword'];
     
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     
     // Check if email exists
-    $checkEmail = $mysqli->prepare("SELECT email FROM users WHERE email = ?");
+    $checkEmail = $conn->prepare("SELECT email FROM users WHERE email = ?");
     $checkEmail->bind_param("s", $email);
     $checkEmail->execute();
     $checkEmail->store_result();
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $passwordHash = password_hash($password, PASSWORD_BCRYPT);
         $role_id = 2; // Default user role
         
-        $stmt = $mysqli->prepare("INSERT INTO users (email, password_hash, first_name, last_name, role_id) VALUES (?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO users (email, password_hash, first_name, last_name, role_id) VALUES (?, ?, ?, ?, ?)");
         $stmt->bind_param("ssssi", $email, $passwordHash, $firstName, $lastName, $role_id);
         
         if ($stmt->execute()) {
@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header("Location: login.php");
             exit();
         } else {
-            $errors[] = "Registration failed: " . $mysqli->error;
+            $errors[] = "Registration failed: " . $conn->error;
         }
         $stmt->close();
     }

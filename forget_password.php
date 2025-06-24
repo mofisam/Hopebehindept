@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
         $errors[] = "Invalid form submission";
     } else {
-        $email = $mysqli->real_escape_string($_POST['email'] ?? '');
+        $email = $conn->real_escape_string($_POST['email'] ?? '');
         
         // Validate email
         if (empty($email)) {
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if (empty($errors)) {
             // Check if email exists
-            $stmt = $mysqli->prepare("SELECT user_id, first_name FROM users WHERE email = ?");
+            $stmt = $conn->prepare("SELECT user_id, first_name FROM users WHERE email = ?");
             $stmt->bind_param("s", $email);
             $stmt->execute();
             $result = $stmt->get_result();
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $expires = date('Y-m-d H:i:s', time() + 3600);
                 
                 // Store token in database
-                $updateStmt = $mysqli->prepare("UPDATE users SET reset_token = ?, reset_token_expires = ? WHERE user_id = ?");
+                $updateStmt = $conn->prepare("UPDATE users SET reset_token = ?, reset_token_expires = ? WHERE user_id = ?");
                 $updateStmt->bind_param("ssi", $token, $expires, $user['user_id']);
                 
                 if ($updateStmt->execute()) {
@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $mail->addAddress($email, $user['first_name']);
                         
                         // Content
-                        $resetLink = "<? BASE_URL ?>/reset-password.php?token=$token";
+                        $resetLink = "http://hopebehindebt/reset-password.php?token=$token";
                         $mail->isHTML(true);
                         $mail->Subject = 'Password Reset Request';
                         $mail->Body = "

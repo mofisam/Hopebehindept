@@ -1,9 +1,32 @@
+<?php
+require_once __DIR__ . '/../config/db.php';
+require_once __DIR__ . '/../include/functions.php';
+
+// Start session if not already started
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+
+// Check if user is logged in
+$isLoggedIn = isset($_SESSION['user_id']);
+?>
+
+
+<?php
+if (get_setting('maintenance_mode') === '1') {
+    header('HTTP/1.1 503 Service Unavailable');
+    die('<h1>Maintenance Mode</h1><p>' . htmlspecialchars(get_setting('maintenance_message', 'We are currently performing maintenance. Please check back later.')) . '</p>');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Responsive Navbar</title>
+  <meta name="description" content="<?= htmlspecialchars(get_setting('meta_description', 'Default website description')) ?>">
+  <meta name="keywords" content="<?= htmlspecialchars(get_setting('meta_keywords', 'default,keywords')) ?>">
+  <title><?= htmlspecialchars(get_setting('site_title', 'My Website')) ?> - <?= htmlspecialchars($pageTitle ?? '') ?></title>
+
   <!-- Bootstrap CSS -->
   <link
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -81,7 +104,7 @@
     .hero-section {
       position: relative;
       overflow: hidden;
-      background: linear-gradient(90deg,rgb(239, 222, 189) 0%, #27a263 70%, #27a263 100%);
+      background: linear-gradient(90deg, #feb21e 0%, #27a263 70%, #27a263 100%);
     }
     
     /* Optional: Add a subtle pattern overlay */
@@ -127,6 +150,7 @@
   </style>
 </head>
 <body>
+  
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
     <a class="navbar-brand" href="index.php">
@@ -145,9 +169,23 @@
         <li class="nav-item"><a class="nav-link" href="programs.php">Programs</a></li>
         <li class="nav-item"><a class="nav-link" href="blog.php">Blog</a></li>
         <li class="nav-item"><a class="nav-link" href="about.php">About Us</a></li>
-        <li class="nav-item ms-2">
-          <a class="btn btn-outline-success bg-success text-white" href="login.php">Sign In</a>
-        </li>
+        <?php if ($isLoggedIn): ?>
+          <li class="nav-item dropdown ms-2">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <?= htmlspecialchars($_SESSION['first_name'] ?? 'Account') ?>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="dashboard.php">Dashboard</a></li>
+              <li><a class="dropdown-item" href="profile.php">Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+            </ul>
+          </li>
+        <?php else: ?>
+          <li class="nav-item ms-2">
+            <a class="btn btn-outline-success bg-success text-white" href="login.php">Sign In</a>
+          </li>
+        <?php endif; ?>
       </ul>
     </div>
   </nav>
@@ -161,7 +199,12 @@
     <a href="programs.php">Programs</a>
     <a href="blog.php">Blog</a>
     <a href="aboutus.php">About Us</a>
-    <a href="#" class="btn btn-outline-primary mt-3">Sign In</a>
+    <?php if ($isLoggedIn): ?>
+      <a href="dashboard.php" class="btn btn-outline-primary mt-3">Dashboard</a>
+      <a href="logout.php" class="btn btn-outline-danger mt-2">Logout</a>
+    <?php else: ?>
+      <a href="login.php" class="btn btn-outline-primary mt-3">Sign In</a>
+    <?php endif; ?>
   </div>
 
   <!-- Bootstrap JS and dependencies -->

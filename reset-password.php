@@ -12,7 +12,7 @@ $valid_token = false;
 
 // Validate token if present
 if (!empty($token)) {
-    $stmt = $mysqli->prepare("SELECT user_id, reset_token_expires FROM users WHERE reset_token = ?");
+    $stmt = $conn->prepare("SELECT user_id, reset_token_expires FROM users WHERE reset_token = ?");
     $stmt->bind_param("s", $token);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['csrf_token'])) {
         
         if (empty($errors) && isset($_SESSION['reset_user_id'], $_SESSION['reset_token'])) {
             // Verify token again
-            $stmt = $mysqli->prepare("SELECT user_id FROM users WHERE user_id = ? AND reset_token = ?");
+            $stmt = $conn->prepare("SELECT user_id FROM users WHERE user_id = ? AND reset_token = ?");
             $stmt->bind_param("is", $_SESSION['reset_user_id'], $_SESSION['reset_token']);
             $stmt->execute();
             $result = $stmt->get_result();
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['csrf_token'])) {
             if ($result->num_rows === 1) {
                 // Update password
                 $password_hash = password_hash($new_password, PASSWORD_BCRYPT);
-                $updateStmt = $mysqli->prepare("UPDATE users SET password_hash = ?, reset_token = NULL, reset_token_expires = NULL WHERE user_id = ?");
+                $updateStmt = $conn->prepare("UPDATE users SET password_hash = ?, reset_token = NULL, reset_token_expires = NULL WHERE user_id = ?");
                 $updateStmt->bind_param("si", $password_hash, $_SESSION['reset_user_id']);
                 
                 if ($updateStmt->execute()) {

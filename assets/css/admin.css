@@ -1,0 +1,82 @@
+/* Admin Header Styles */
+.navbar-brand {
+    font-weight: 600;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.navbar-dark .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+    right: 0.5rem;
+}
+
+.form-control-dark {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.form-control-dark:focus {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: transparent;
+    box-shadow: 0 0 0 0.25rem rgba(255, 180, 32, 0.25);
+}
+
+.dropdown-menu-dark {
+    background-color: #343a40;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 180, 32, 0.15);
+}
+
+/* Notification alerts */
+.alert {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+/* Footer Styles */
+.footer {
+    background-color: #f8f9fa;
+    font-size: 0.875rem;
+    padding: 1rem 0;
+}
+
+.footer a {
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer a:hover {
+    color: #0d6efd !important;
+}
+
+/* DataTables Customization */
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_processing,
+.dataTables_wrapper .dataTables_paginate {
+    color: #6c757d;
+    font-size: 0.875rem;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 0.25rem 0.5rem;
+    margin-left: 0.25rem;
+    border-radius: 0.25rem;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: #0d6efd;
+    color: white !important;
+    border: 1px solid #0d6efd;
+}
