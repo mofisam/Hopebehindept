@@ -124,7 +124,7 @@ $successStories = getSuccessStories($conn);
     <?php foreach ($programs as $program): ?>
     <div class="col-md-4">
       <div class="card h-100 shadow-sm border-0">
-        <img src="assets/images/<?php echo htmlspecialchars($program['featured_image'] ?? 'img.jpg'); ?>" 
+        <img src="<?=  BASE_URL ?>/<?php echo htmlspecialchars($program['featured_image'] ?? 'img.jpg'); ?>" 
              class="card-img-top" alt="<?php echo htmlspecialchars($program['title']); ?>" loading="lazy">
         <div class="card-body">
           <h5 class="card-title fw-bold"><?php echo htmlspecialchars($program['title']); ?></h5>
@@ -162,7 +162,7 @@ $successStories = getSuccessStories($conn);
       <div class="col-md-4">
         <div class="card h-100 border-0 shadow-sm">
           <div class="card-body text-center p-4">
-            <img src="assets/images/<?php echo htmlspecialchars($story['author_image'] ?? 'img.jpg'); ?>" 
+            <img src="<?=  BASE_URL ?>/<?php echo htmlspecialchars($story['author_image'] ?? 'img.jpg'); ?>" 
                  class="rounded-circle mb-3" width="100" height="100" alt="<?php echo htmlspecialchars($story['author_name']); ?>" 
                  style="object-fit: cover;">
             <h4 class="h5"><?php echo htmlspecialchars($story['author_name']); ?></h4>

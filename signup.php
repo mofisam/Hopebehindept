@@ -1,16 +1,8 @@
 <?php
 // Start session and include header
 session_start();
-
-
-// Database connection
-$conn = new mysqli('localhost', 'root', '1234', 'Hopebehindebt');
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+// Include database configuration
+require_once __DIR__ . '/config/db.php';
 // Process form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Get form data
