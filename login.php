@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once 'config/db.php';
-
+require_once __DIR__ . '/include/functions.php';
 // Redirect if already logged in
 if (isset($_SESSION['user_id'])) {
     header("Location: index.php");
@@ -146,6 +146,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <a href="index.php">
                                     <img src="assets/images/logo.jpg" alt="Financial Freedom Logo" class="login-logo">
                                 </a>
+                                <p class="h3 text-muted">
+                                    <?= htmlspecialchars(get_setting('site_title', 'My Website')) ?>
+                                </p>
                                 <h2 class="h4 mb-0 text-success" >Welcome Back</h2>
                                 <p class="text-muted">Sign in to your account</p>
                             </div>

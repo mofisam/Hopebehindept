@@ -262,7 +262,7 @@ include 'include/admin-header.php';
                                     <label for="featured_image" class="form-label">Featured Image</label>
                                     <?php if (!empty($program['featured_image'])): ?>
                                         <div class="mb-2">
-                                            <img src="../uploads/programs/<?= htmlspecialchars($program['featured_image']) ?>" 
+                                            <img src="<?= BASE_URL ?>/<?= htmlspecialchars($program['featured_image']) ?>" 
                                                  class="img-thumbnail" style="max-height: 150px;" 
                                                  alt="Current featured image">
                                             <div class="form-check mt-2">

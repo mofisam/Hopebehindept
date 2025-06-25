@@ -113,7 +113,7 @@
   }
   
   .social-icons a:hover {
-    background-color: #ffb420;
+    background-color: #27a263;
     transform: translateY(-3px);
     text-decoration: none !important;
   }

@@ -155,7 +155,7 @@ if (get_setting('maintenance_mode') === '1') {
   <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
     <a class="navbar-brand" href="index.php">
       <img src="assets/images/logo.png" alt="Company Logo" class="img-fluid" width="70px">
-      <span>Home</span>
+      <span><?= htmlspecialchars(get_setting('site_title', 'My Website')) ?></span>
     </a>
 
     <!-- Mobile hamburger toggle -->
