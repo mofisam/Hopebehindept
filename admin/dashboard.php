@@ -334,7 +334,7 @@ include 'include/admin-header.php';
                                     <p class="text-muted mb-0">Total Programs</p>
                                 </div>
                                 <div class="col-md-4 mb-3 mb-md-0">
-                                    <h3>$<?= $stats['total_raised'] ?></h3>
+                                    <h3>₦<?= $stats['total_raised'] ?></h3>
                                     <p class="text-muted mb-0">Total Raised</p>
                                 </div>
                                 <div class="col-md-4">

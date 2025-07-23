@@ -43,7 +43,7 @@ include 'include/header.php';
     <div class="row">
       <div class="col-lg-8">
         <h1 class="display-4 fw-bold mb-4"><?php echo htmlspecialchars($program['title']); ?></h1>
-        <img src="assets/images/<?php echo htmlspecialchars($program['featured_image'] ?? 'default-program.jpg'); ?>" 
+        <img src="<?php echo htmlspecialchars($program['featured_image'] ?? 'default-program.jpg'); ?>" 
              class="img-fluid rounded mb-4" alt="<?php echo htmlspecialchars($program['title']); ?>">
         
         <div class="mb-4">

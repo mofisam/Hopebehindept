@@ -13,7 +13,7 @@ $popularTags = getPopularTags($conn);
 ?>
 
 <!-- Blog Hero Section -->
-<section class="blog-hero py-5" style="background: linear-gradient(135deg, #ffb420 0%, #ff8c00 50%, #ff6b00 100%);">
+<section class="blog-hero py-5" style="background: linear-gradient(90deg, #feb21e 0%, #27a263 70%, #27a263 100%);">
   <div class="container py-5">
     <div class="row justify-content-center text-center">
       <div class="col-lg-8">
@@ -41,7 +41,7 @@ $popularTags = getPopularTags($conn);
       <?php if ($featuredPost): ?>
       <div class="card mb-5 border-0 shadow-lg">
         <div class="position-relative">
-          <img src="/uploads/blog/<?= htmlspecialchars($featuredPost['featured_image'] ?? 'default-featured.jpg') ?>" 
+          <img src="<?= BASE_URL ?>uploads/blog/<?= htmlspecialchars($featuredPost['featured_image'] ?? 'default-featured.jpg') ?>" 
                class="card-img-top" alt="<?= htmlspecialchars($featuredPost['title']) ?>" style="height: 400px; object-fit: cover;">
           <div class="position-absolute top-0 start-0 bg-success text-white px-3 py-2">
             Featured
@@ -72,7 +72,7 @@ $popularTags = getPopularTags($conn);
         ?>
         <div class="col-md-6">
           <div class="card h-100 border-0 shadow-sm">
-            <img src="/uploads/blog/<?= htmlspecialchars($post['featured_image'] ?? 'default-post.jpg') ?>" 
+            <img src="<?= BASE_URL ?>uploads/blog/<?= htmlspecialchars($post['featured_image'] ?? 'default-post.jpg') ?>" 
                  class="card-img-top" alt="<?= htmlspecialchars($post['title']) ?>" style="height: 200px; object-fit: cover;">
             <div class="card-body">
               <div class="d-flex mb-2">
@@ -150,11 +150,11 @@ $popularTags = getPopularTags($conn);
             <h4 class="card-title mb-3 text-success" >Recent Posts</h4>
             <?php foreach ($sidebarPosts as $post): ?>
             <div class="mb-3 d-flex">
-              <img src="/uploads/blog/<?= htmlspecialchars($post['featured_image'] ?? 'default-thumbnail.jpg') ?>" 
+              <img src="<?= BASE_URL ?>uploads/blog/<?= htmlspecialchars($post['featured_image'] ?? 'default-thumbnail.jpg') ?>" 
                    alt="<?= htmlspecialchars($post['title']) ?>" class="rounded me-3" width="80" height="60" style="object-fit: cover;">
               <div>
                 <h6 class="mb-1">
-                  <a href="blog-single.php?slug=<?= htmlspecialchars($post['slug']) ?>" class="text-decoration-none">
+                  <a href="blog-single.php?slug=<?= htmlspecialchars($post['slug']) ?>" class="text-decoration-none text-warning">
                     <?= htmlspecialchars($post['title']) ?>
                   </a>
                 </h6>

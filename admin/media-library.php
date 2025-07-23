@@ -133,7 +133,7 @@ include 'include/admin-header.php';
                                 <div class="col">
                                     <div class="card h-100">
                                         <?php if (strpos($file['type'], 'image/') === 0): ?>
-                                            <img src="<?= str_replace(BASE_URL, '/', $file['path']) ?>" 
+                                            <img src="<?= str_replace('', '/', $file['path']) ?>" 
                                                  class="card-img-top" 
                                                  alt="<?= htmlspecialchars($file['name']) ?>"
                                                  style="height: 180px; object-fit: contain;">
@@ -155,7 +155,7 @@ include 'include/admin-header.php';
                                         </div>
                                         <div class="card-footer bg-transparent">
                                             <div class="d-flex justify-content-between">
-                                                <a href="<?= str_replace('../', '/', $file['path']) ?>" 
+                                                <a href="<?= str_replace('', '/', $file['path']) ?>" 
                                                    target="_blank" 
                                                    class="btn btn-sm btn-outline-primary">
                                                     <i class="bi bi-eye"></i> View

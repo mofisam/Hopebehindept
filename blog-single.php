@@ -126,7 +126,7 @@ include 'include/header.php';
           </div>
           
           <!-- Featured Image -->
-          <img src="/uploads/blog/<?= htmlspecialchars($post['featured_image'] ?? 'default-featured.jpg') ?>" 
+          <img src="uploads/blog/<?= htmlspecialchars($post['featured_image'] ?? 'default-featured.jpg') ?>" 
                class="img-fluid rounded mb-4" alt="<?= htmlspecialchars($post['title']) ?>">
           
           <!-- Post Content -->
@@ -184,7 +184,7 @@ include 'include/header.php';
             <?php foreach ($relatedPosts as $relatedPost): ?>
             <div class="col-md-6">
               <div class="card h-100 border-0 shadow-sm">
-                <img src="/uploads/blog/<?= htmlspecialchars($relatedPost['featured_image'] ?? 'default-post.jpg') ?>" 
+                <img src="uploads/blog/<?= htmlspecialchars($relatedPost['featured_image'] ?? 'default-post.jpg') ?>" 
                      class="card-img-top" alt="<?= htmlspecialchars($relatedPost['title']) ?>" style="height: 180px; object-fit: cover;">
                 <div class="card-body">
                   <h5 class="card-title"><?= htmlspecialchars($relatedPost['title']) ?></h5>
@@ -276,3 +276,4 @@ include 'include/header.php';
 </section>
 
 <?php include 'include/footer.php'; ?>
+<script></scr

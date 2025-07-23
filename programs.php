@@ -70,7 +70,7 @@ $successStories = getSuccessStories($conn);
     <?php foreach ($featuredPrograms as $program): ?>
     <div class="col-md-6 col-lg-4">
       <div class="card h-100 shadow-sm border-0">
-        <img src="/images/<?= htmlspecialchars($program['featured_image'] ?? 'default-program.jpg') ?>" 
+        <img src="<?= BASE_URL .  htmlspecialchars($program['featured_image'] ?? 'default-program.jpg') ?>" 
              class="card-img-top" alt="<?= htmlspecialchars($program['title']) ?>" loading="lazy">
         <div class="card-body">
           <div class="d-flex mb-3">

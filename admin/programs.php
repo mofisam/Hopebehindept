@@ -201,7 +201,7 @@ include 'include/admin-header.php';
                                                     </div>
                                                 </div>
                                                 <small class="text-muted">
-                                                    $<?= number_format($program['amount_raised']) ?> of $<?= number_format($program['funding_goal']) ?>
+                                                ₦<?= number_format($program['amount_raised']) ?> of ₦<?= number_format($program['funding_goal']) ?>
                                                 </small>
                                             </td>
                                             <td><?= $program['category_count'] ?></td>

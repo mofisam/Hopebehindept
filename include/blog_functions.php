@@ -108,3 +108,21 @@ function getPostCommentsCount($conn, $postId) {
     
     return $row['comment_count'];
 }
+
+function getPostCategories($conn, $post_id) {
+    $categories = [];
+    $query = "SELECT c.* FROM blog_categories c
+              JOIN blog_post_categories pc ON c.category_id = pc.category_id
+              WHERE pc.post_id = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("i", $post_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    while ($row = $result->fetch_assoc()) {
+        $categories[] = $row;
+    }
+    
+    $stmt->close();
+    return $categories;
+}

@@ -3,6 +3,7 @@
 session_start();
 // Include database configuration
 require_once __DIR__ . '/../config/db.php';
+require_once __DIR__ . '/../include/blog_functions.php';
 
 // Check if user is admin
 if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
@@ -13,7 +14,7 @@ if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
 $postId = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 $isEdit = $postId > 0;
 
-// Initialize post data
+// Initialize post data with all required fields
 $post = [
     'title' => '',
     'slug' => '',
@@ -70,7 +71,8 @@ if ($isEdit) {
         exit();
     }
     
-    $post = $result->fetch_assoc();
+    // Merge with default values to ensure all keys exist
+    $post = array_merge($post, $result->fetch_assoc());
     $stmt->close();
     
     // Fetch selected categories
@@ -98,18 +100,18 @@ if ($isEdit) {
 
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Validate and sanitize input
-    $title = trim($_POST['title']);
-    $slug = trim($_POST['slug']);
-    $excerpt = trim($_POST['excerpt']);
-    $content = trim($_POST['content']);
-    $status = $_POST['status'];
+    // Safely get all POST values with defaults
+    $title = trim($_POST['title'] ?? '');
+    $slug = trim($_POST['slug'] ?? '');
+    $excerpt = trim($_POST['excerpt'] ?? '');
+    $content = trim($_POST['content'] ?? '');
+    $status = $_POST['status'] ?? 'draft';
     $isFeatured = isset($_POST['is_featured']) ? 1 : 0;
-    $metaTitle = trim($_POST['meta_title']);
-    $metaDescription = trim($_POST['meta_description']);
-    $authorId = (int)$_POST['author_id'];
-    $categories = isset($_POST['categories']) ? $_POST['categories'] : [];
-    $tags = isset($_POST['tags']) ? $_POST['tags'] : [];
+    $metaTitle = trim($_POST['meta_title'] ?? '');
+    $metaDescription = trim($_POST['meta_description'] ?? '');
+    $authorId = (int)($_POST['author_id'] ?? $_SESSION['user_id']);
+    $categories = $_POST['categories'] ?? [];
+    $tags = $_POST['tags'] ?? [];
     
     // Generate slug if empty
     if (empty($slug)) {
@@ -243,13 +245,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Handle image upload via AJAX
 if (isset($_FILES['featured_image'])) {
     $uploadDir = '../uploads/blog/';
+    // Create directory if it doesn't exist
+    if (!file_exists($uploadDir)) {
+        mkdir($uploadDir, 0755, true);
+    }
+    
     $allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
     $maxSize = 5 * 1024 * 1024; // 5MB
     
     $file = $_FILES['featured_image'];
     
     if ($file['error'] !== UPLOAD_ERR_OK) {
-        echo json_encode(['success' => false, 'message' => 'Upload error']);
+        $errorMessages = [
+            UPLOAD_ERR_INI_SIZE => 'File exceeds upload_max_filesize',
+            UPLOAD_ERR_FORM_SIZE => 'File exceeds MAX_FILE_SIZE in form',
+            UPLOAD_ERR_PARTIAL => 'File only partially uploaded',
+            UPLOAD_ERR_NO_FILE => 'No file was uploaded',
+            UPLOAD_ERR_NO_TMP_DIR => 'Missing temporary folder',
+            UPLOAD_ERR_CANT_WRITE => 'Failed to write file to disk',
+            UPLOAD_ERR_EXTENSION => 'File upload stopped by extension'
+        ];
+        $message = $errorMessages[$file['error']] ?? 'Unknown upload error';
+        echo json_encode(['success' => false, 'message' => $message]);
         exit();
     }
     
@@ -574,11 +591,23 @@ if (isset($_FILES['featured_image'])) {
                             // Clear file input
                             $('#featured_image').val('');
                         } else {
-                            alert(response.message || 'Error uploading image');
+                            // Show detailed error message
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Upload Failed',
+                                text: response.message || 'Unknown error occurred',
+                                footer: 'Please check file type and size (max 5MB)'
+                            });
                         }
                     },
-                    error: function() {
-                        alert('Error uploading image');
+                    error: function(xhr, status, error) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Upload Error',
+                            text: 'Server responded with: ' + xhr.status + ' ' + error,
+                            footer: 'Check console for details'
+                        });
+                        console.error(xhr.responseText);
                     }
                 });
             });
@@ -599,8 +628,18 @@ if (isset($_FILES['featured_image'])) {
                             );
                             $('#remove-featured-image').remove();
                         } else {
-                            alert(response.message || 'Error removing image');
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: response.message || 'Failed to remove image'
+                            });
                         }
+                    }).fail(function(xhr) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'Server error: ' + xhr.status + ' ' + xhr.statusText
+                        });
                     });
                 }
             });

@@ -61,7 +61,7 @@
         <form class="mb-3">
           <div class="input-group">
             <input type="email" class="form-control" placeholder="Your email" aria-label="Your email">
-            <button class="btn btn-primary" type="button" style="background-color: #ffb420; border-color: #ffb420;">
+            <button class="btn btn-primary" type="button" style="background-color: #27a263; border-color: #27a263;">
               <i class="fas fa-paper-plane"></i>
             </button>
           </div>
@@ -75,7 +75,7 @@
     <!-- Copyright -->
     <div class="row align-items-center">
       <div class="col-md-6 text-center text-md-start">
-        <p class="mb-0">&copy; <?php echo date('Y'); ?> Global Financial Impact. All rights reserved.</p>
+        <p class="mb-0">&copy; <?php echo date('Y'); ?> <span><?= htmlspecialchars(get_setting('site_title', 'My Website')) ?></span>. All rights reserved.</p>
       </div>
       <div class="col-md-6 text-center text-md-end">
         <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>

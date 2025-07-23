@@ -6,11 +6,9 @@ require_once __DIR__ . '/../include/functions.php';
 if (session_status() === PHP_SESSION_NONE) {
   session_start();
 }
-
 // Check if user is logged in
 $isLoggedIn = isset($_SESSION['user_id']);
 ?>
-
 
 <?php
 if (get_setting('maintenance_mode') === '1') {
@@ -152,10 +150,13 @@ if (get_setting('maintenance_mode') === '1') {
 <body>
   
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+   <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
     <a class="navbar-brand" href="index.php">
-      <img src="assets/images/logo.png" alt="Company Logo" class="img-fluid" width="70px">
+      <img src="assets/images/logo.png" alt="Hopebehindebt" class="img-fluid">
       <span><?= htmlspecialchars(get_setting('site_title', 'My Website')) ?></span>
+
+
+      
     </a>
 
     <!-- Mobile hamburger toggle -->
@@ -200,7 +201,7 @@ if (get_setting('maintenance_mode') === '1') {
     <a href="blog.php">Blog</a>
     <a href="aboutus.php">About Us</a>
     <?php if ($isLoggedIn): ?>
-      <a href="dashboard.php" class="btn btn-outline-primary mt-3">Dashboard</a>
+      <a href="admin/dashboard.php" class="btn btn-outline-primary mt-3">Dashboard</a>
       <a href="logout.php" class="btn btn-outline-danger mt-2">Logout</a>
     <?php else: ?>
       <a href="login.php" class="btn btn-outline-primary mt-3">Sign In</a>
